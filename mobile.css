@@ -1,0 +1,25 @@
+html {color-scheme:dark;background:#111113;-webkit-text-size-adjust:100%}
+body{margin:0;background:#111113;color:#f5f5f7;font-family:'SUIT Variable',sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+button,input,textarea,summary{touch-action:manipulation}
+button{cursor:pointer}
+button:disabled{cursor:default}
+#subin-kit{max-width:480px;min-height:100svh;margin:0 auto}
+#subin-kit .phone{max-width:none;width:100%;border:0;border-radius:0;margin:0;overflow:visible}
+#subin-kit .phone-header{padding:calc(18px + env(safe-area-inset-top)) 22px 10px}
+#subin-kit .phone-header .brand{display:flex;gap:10px;align-items:center}
+#subin-kit .demo-badge{font-size:10px;letter-spacing:0;font-weight:400;color:#b0b0ba}
+#subin-kit .phone-main{padding:8px 20px calc(110px + env(safe-area-inset-bottom));min-height:calc(100svh - 80px)}
+#subin-kit .phone-nav{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(100%,480px);z-index:20;background:#111113;padding:10px 16px calc(12px + env(safe-area-inset-bottom));border-top:1px solid #333339}
+#subin-kit .phone-nav button{min-height:48px;min-width:52px;font-size:11px}
+#subin-kit .phone-nav button[aria-pressed=true]{color:#f5f5f7}
+#subin-kit .phone-nav button[aria-pressed=false]{color:#91919d}
+#subin-kit .app-back{min-height:44px}
+#subin-kit .app-bell{width:44px;height:44px}
+#subin-kit .profile summary{cursor:pointer}
+#subin-kit .product .heart-button:focus-visible,#subin-kit .product summary:focus-visible{outline:2px solid #e8a0ac;outline-offset:3px}
+#subin-kit .phone-main .profile .profile-row{padding:14px 16px}
+#subin-kit .app-list li{align-items:center}
+#subin-kit .likes-notice{margin-bottom:18px}
+@media(min-width:481px){body{background:#09090b}#subin-kit{background:#111113}}
+@media(max-width:350px){#subin-kit .phone-main{padding-left:16px;padding-right:16px}#subin-kit .phone-title h2{font-size:24px}#subin-kit .phone-main .concierge{padding:18px}}
