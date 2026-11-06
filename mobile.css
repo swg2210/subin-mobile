@@ -4,6 +4,13 @@ body{margin:0;background:#111113;color:#f5f5f7;font-family:'SUIT Variable',sans-
 button,input,textarea,summary{touch-action:manipulation}
 button{cursor:pointer}
 button:disabled{cursor:default}
+#subin-kit .event-shell{overflow:hidden}
+#subin-kit .event-shell button.event{border-radius:0}
+#subin-kit .event-apply{padding:0 18px 16px}
+#subin-kit .apply-link{display:flex;align-items:center;justify-content:center;gap:7px;min-height:46px;padding:12px 16px;background:var(--s-text);color:var(--s-bg);border-radius:12px;font-size:14px;font-weight:600;text-decoration:none;line-height:1.5}
+#subin-kit .apply-link svg{width:16px;height:16px}
+#subin-kit .apply-link:focus-visible{outline:2px solid var(--s-rose);outline-offset:4px}
+#subin-kit .apply-link:hover{background:var(--s-hover)}
 #subin-kit{max-width:480px;min-height:100svh;margin:0 auto}
 #subin-kit .phone{max-width:none;width:100%;border:0;border-radius:0;margin:0;overflow:visible}
 #subin-kit .phone-header{padding:calc(18px + env(safe-area-inset-top)) 22px 10px}

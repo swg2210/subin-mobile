@@ -43,7 +43,7 @@
   if(state.view==='live'){section('','timer');section('','seats');const list=document.createElement('section');list.className='screen-section';const heading=document.createElement('h3');heading.className='section-title';heading.textContent='같은 테이블 참가자 · 6명';list.append(heading);const note=document.createElement('p');note.className='detail-note';note.style.margin='0 0 12px';note.textContent='모두 디자인 확인용 예시 프로필이에요.';list.append(note);participants.forEach(person=>{const row=document.createElement('div');row.style.marginTop='8px';row.append(createParticipant(person));list.append(row);});target.append(list);}
   if(state.view==='likes')section('','like');
   if(state.view==='my')extra('my');
-  if(state.view==='event'){const el=section('','event');el.querySelector('.event').disabled=true;extra('eventDetails');}
+  if(state.view==='event'){const el=section('','event');el.querySelector('.event').disabled=true;el.querySelector('.event-apply').hidden=true;extra('eventDetails');}
   if(state.view==='premium'){const el=section('','concierge');el.querySelector('[data-action="consult"]').hidden=true;extra('premiumDetails');}
   if(state.view==='register')extra('register');
   root.querySelector('[data-likes-notice]').hidden=state.view!=='likes';
@@ -52,7 +52,6 @@
  }
  const save=()=>{try{localStorage.setItem('subin-mobile-demo-v1',JSON.stringify({modelContent:state,privateContent:{interactions}}));}catch{}};
  root.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
- if(b.hasAttribute('data-motion-toggle')){const card=b.closest('.concierge');const paused=card.dataset.motion!=='paused';card.dataset.motion=paused?'paused':'playing';b.setAttribute('aria-pressed',String(paused));b.setAttribute('aria-label',paused?'매칭 애니메이션 재생':'매칭 애니메이션 일시정지');b.innerHTML=paused?'<i data-lucide="play" aria-hidden="true"></i>':'<i data-lucide="pause" aria-hidden="true"></i>';if(globalThis.lucide)lucide.createIcons();}
  if(b.dataset.toggle){const k=b.dataset.toggle;state.selected=state.selected.includes(k)?state.selected.filter(x=>x!==k):[...state.selected,k];render();save();}
  if(b.dataset.preset){window.scrollTo(0,0);state.preset=b.dataset.preset;state.view=state.preset;state.selected=[...presets[state.preset]];render();save();}
  if(b.dataset.route){window.scrollTo(0,0);state.view=b.dataset.route;if(Object.hasOwn(presets,state.view))state.preset=state.view;render();save();}
